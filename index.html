@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Name - Portfolio</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Animated stars background -->
+    <div class="stars" id="stars"></div>
+
+    <!-- Navigation -->
+    <nav>
+        <div class="nav-container">
+            <a href="#" class="logo" onclick="showPage('home')">Your Name</a>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#" onclick="showPage('home')">Home</a></li>
+                <li><a href="#" onclick="showPage('about')">About</a></li>
+                <li><a href="#" onclick="showPage('portfolio')">Portfolio</a></li>
+                <li><a href="#" onclick="showPage('contact')">Contact</a></li>
+            </ul>
+            <div class="mobile-menu" onclick="toggleMobileMenu()">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main content -->
+    <main>
+        <!-- Home page -->
+        <div id="home" class="page active">
+            <section class="hero">
+                <div class="hero-content">
+                    <h1>Welcome to the Universe</h1>
+                    <p>I'm a passionate developer exploring the infinite possibilities of code, creating digital experiences that reach for the stars.</p>
+                    <a href="#" class="cta-button" onclick="showPage('portfolio')">Explore My Work</a>
+                </div>
+            </section>
+        </div>
+
+        <!-- About page -->
+        <div id="about" class="page">
+            <div class="page-header">
+                <h2>About Me</h2>
+            </div>
+            <div class="page-content">
+                <p>Welcome to my corner of the digital universe! I'm a developer who believes that great code, like the cosmos, is both beautiful and functional.</p>
+                <br>
+                <p>My journey began with curiosity about how things work, and has evolved into a passion for creating elegant solutions to complex problems. I specialize in web development, with experience in modern frameworks and a love for clean, efficient code.</p>
+                <br>
+                <p>When I'm not coding, you can find me stargazing, reading about space exploration, or working on personal projects that push the boundaries of what's possible.</p>
+            </div>
+        </div>
+
+        <!-- Portfolio page -->
+        <div id="portfolio" class="page">
+            <div class="page-header">
+                <h2>Portfolio</h2>
+            </div>
+            <div class="page-content">
+                <p>Here are some projects I've worked on, each one a small universe of its own:</p>
+                <div class="portfolio-grid">
+                    <div class="portfolio-item" onclick="showPage('project-nebula')">
+                        <h3>Project Nebula</h3>
+                        <p>A stunning web application that visualizes data like star formations. Built with modern JavaScript and Three.js for immersive 3D experiences.</p>
+                        <div class="project-tech">
+                            <span class="tech-tag">JavaScript</span>
+                            <span class="tech-tag">Three.js</span>
+                            <span class="tech-tag">WebGL</span>
+                        </div>
+                        <div class="view-project">View Project →</div>
+                    </div>
+                    <div class="portfolio-item" onclick="showPage('project-galaxy')">
+                        <h3>Galaxy Dashboard</h3>
+                        <p>An intuitive admin dashboard with a space-themed interface. Features real-time data updates and smooth animations.</p>
+                        <div class="project-tech">
+                            <span class="tech-tag">React</span>
+                            <span class="tech-tag">Node.js</span>
+                            <span class="tech-tag">Socket.io</span>
+                        </div>
+                        <div class="view-project">View Project →</div>
+                    </div>
+                    <div class="portfolio-item" onclick="showPage('project-cosmic')">
+                        <h3>Cosmic Commerce</h3>
+                        <p>E-commerce platform with a sleek, modern design. Integrated payment systems and responsive design for all devices.</p>
+                        <div class="project-tech">
+                            <span class="tech-tag">Next.js</span>
+                            <span class="tech-tag">Stripe</span>
+                            <span class="tech-tag">MongoDB</span>
+                        </div>
+                        <div class="view-project">View Project →</div>
+                    </div>
+                    <div class="portfolio-item" onclick="showPage('project-stellar')">
+                        <h3>Stellar API</h3>
+                        <p>RESTful API service designed for scalability and performance. Clean architecture with comprehensive documentation.</p>
+                        <div class="project-tech">
+                            <span class="tech-tag">Python</span>
+                            <span class="tech-tag">FastAPI</span>
+                            <span class="tech-tag">PostgreSQL</span>
+                        </div>
+                        <div class="view-project">View Project →</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Contact page -->
+        <div id="contact" class="page">
+            <div class="page-header">
+                <h2>Contact</h2>
+            </div>
+            <div class="page-content">
+                <p>Ready to embark on a project together? Let's connect and create something extraordinary!</p>
+                <br>
+                <div class="contact-info">
+                    <a class="icon-button" href="mailto:your.email@example.com" title="Email">
+                        <img src="img/icon-email.png" alt="" aria-hidden="true" />
+                        <span>Email</span>
+                    </a>
+                    <a class="icon-button" href="https://github.com/yourusername" target="_blank" rel="noopener" title="GitHub">
+                        <img src="img/icon-github.png" alt="" aria-hidden="true" />
+                        <span>GitHub</span>
+                    </a>
+                    <a class="icon-button" href="https://linkedin.com/in/yourprofile" target="_blank" rel="noopener" title="LinkedIn">
+                        <img src="img/icon-linkedin.png" alt="" aria-hidden="true" />
+                        <span>LinkedIn</span>
+                    </a>
+                </div>
+                <br>
+                <p>I'm always open to discussing new opportunities, collaborating on interesting projects, or just talking about the latest developments in technology and space exploration.</p>
+            </div>
+        </div>
+
+        <!-- Project Pages -->
+        <!-- Project Nebula -->
+        <div id="project-nebula" class="page project-page">
+            <div class="page-header">
+                <h2>Project Nebula</h2>
+                <button class="back-button" onclick="showPage('portfolio')">← Back to Portfolio</button>
+            </div>
+            <div class="page-content">
+                <div class="project-hero">
+                    <div class="project-image">
+                        <div class="placeholder-image">Project Screenshot</div>
+                    </div>
+                    <div class="project-details">
+                        <h3>Data Visualization in 3D Space</h3>
+                        <p>Project Nebula transforms complex datasets into beautiful, interactive 3D visualizations that help users explore data like never before.</p>
+                        
+                        <div class="project-tech">
+                            <span class="tech-tag">JavaScript</span>
+                            <span class="tech-tag">Three.js</span>
+                            <span class="tech-tag">WebGL</span>
+                            <span class="tech-tag">D3.js</span>
+                        </div>
+
+                        <div class="project-links">
+                            <a href="#" class="project-link">Live Demo</a>
+                            <a href="#" class="project-link secondary">GitHub</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-description">
+                    <h4>Overview</h4>
+                    <p>This project was born from the need to make complex data more accessible and engaging. By leveraging WebGL and Three.js, I created an immersive environment where users can navigate through data points as if they were stars in a galaxy.</p>
+                    
+                    <h4>Key Features</h4>
+                    <ul>
+                        <li>Interactive 3D data visualization</li>
+                        <li>Real-time data filtering and clustering</li>
+                        <li>Smooth camera controls and animations</li>
+                        <li>Responsive design for all devices</li>
+                        <li>Performance optimization for large datasets</li>
+                    </ul>
+
+                    <h4>Technical Challenges</h4>
+                    <p>The biggest challenge was optimizing performance while maintaining visual fidelity. I implemented LOD (Level of Detail) systems and efficient data structures to handle thousands of data points smoothly.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Project Galaxy Dashboard -->
+        <div id="project-galaxy" class="page project-page">
+            <div class="page-header">
+                <h2>Galaxy Dashboard</h2>
+                <button class="back-button" onclick="showPage('portfolio')">← Back to Portfolio</button>
+            </div>
+            <div class="page-content">
+                <div class="project-hero">
+                    <div class="project-image">
+                        <div class="placeholder-image">Dashboard Screenshot</div>
+                    </div>
+                    <div class="project-details">
+                        <h3>Real-time Admin Dashboard</h3>
+                        <p>A comprehensive dashboard solution with real-time data updates, beautiful animations, and an intuitive space-themed interface.</p>
+                        
+                        <div class="project-tech">
+                            <span class="tech-tag">React</span>
+                            <span class="tech-tag">Node.js</span>
+                            <span class="tech-tag">Socket.io</span>
+                            <span class="tech-tag">Chart.js</span>
+                        </div>
+
+                        <div class="project-links">
+                            <a href="#" class="project-link">Live Demo</a>
+                            <a href="#" class="project-link secondary">GitHub</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-description">
+                    <h4>Overview</h4>
+                    <p>Galaxy Dashboard provides administrators with real-time insights into their systems through beautiful, space-themed visualizations and intuitive controls.</p>
+                    
+                    <h4>Key Features</h4>
+                    <ul>
+                        <li>Real-time data streaming with WebSockets</li>
+                        <li>Interactive charts and graphs</li>
+                        <li>Customizable widget layout</li>
+                        <li>Dark theme with space aesthetics</li>
+                        <li>Mobile-responsive design</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Project Cosmic Commerce -->
+        <div id="project-cosmic" class="page project-page">
+            <div class="page-header">
+                <h2>Cosmic Commerce</h2>
+                <button class="back-button" onclick="showPage('portfolio')">← Back to Portfolio</button>
+            </div>
+            <div class="page-content">
+                <div class="project-hero">
+                    <div class="project-image">
+                        <div class="placeholder-image">E-commerce Screenshot</div>
+                    </div>
+                    <div class="project-details">
+                        <h3>Modern E-commerce Platform</h3>
+                        <p>A full-featured e-commerce solution with integrated payments, inventory management, and a beautiful user experience.</p>
+                        
+                        <div class="project-tech">
+                            <span class="tech-tag">Next.js</span>
+                            <span class="tech-tag">Stripe</span>
+                            <span class="tech-tag">MongoDB</span>
+                            <span class="tech-tag">Tailwind CSS</span>
+                        </div>
+
+                        <div class="project-links">
+                            <a href="#" class="project-link">Live Demo</a>
+                            <a href="#" class="project-link secondary">GitHub</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-description">
+                    <h4>Overview</h4>
+                    <p>A complete e-commerce solution built with modern technologies, featuring secure payments, inventory management, and an exceptional user experience.</p>
+                    
+                    <h4>Key Features</h4>
+                    <ul>
+                        <li>Secure payment processing with Stripe</li>
+                        <li>Product catalog with search and filtering</li>
+                        <li>User authentication and profiles</li>
+                        <li>Admin panel for inventory management</li>
+                        <li>Mobile-first responsive design</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Project Stellar API -->
+        <div id="project-stellar" class="page project-page">
+            <div class="page-header">
+                <h2>Stellar API</h2>
+                <button class="back-button" onclick="showPage('portfolio')">← Back to Portfolio</button>
+            </div>
+            <div class="page-content">
+                <div class="project-hero">
+                    <div class="project-image">
+                        <div class="placeholder-image">API Documentation</div>
+                    </div>
+                    <div class="project-details">
+                        <h3>Scalable RESTful API</h3>
+                        <p>A high-performance API service built with Python and FastAPI, designed for scalability and developer experience.</p>
+                        
+                        <div class="project-tech">
+                            <span class="tech-tag">Python</span>
+                            <span class="tech-tag">FastAPI</span>
+                            <span class="tech-tag">PostgreSQL</span>
+                            <span class="tech-tag">Docker</span>
+                        </div>
+
+                        <div class="project-links">
+                            <a href="#" class="project-link">API Docs</a>
+                            <a href="#" class="project-link secondary">GitHub</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-description">
+                    <h4>Overview</h4>
+                    <p>Stellar API provides a robust, scalable backend solution with comprehensive documentation, authentication, and high-performance data processing capabilities.</p>
+                    
+                    <h4>Key Features</h4>
+                    <ul>
+                        <li>High-performance async API with FastAPI</li>
+                        <li>JWT authentication and authorization</li>
+                        <li>Comprehensive API documentation</li>
+                        <li>Database migrations and ORM</li>
+                        <li>Docker containerization</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
