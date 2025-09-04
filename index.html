@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Your Name - Portfolio</title>
+    <title>KIM DONGGYU</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -13,13 +13,16 @@
     <!-- Navigation -->
     <nav>
         <div class="nav-container">
-            <a href="#" class="logo" onclick="showPage('home')">Your Name</a>
+            <a href="#" class="logo" onclick="showPage('home')">KIM DONGGYU</a>
             <ul class="nav-links" id="navLinks">
                 <li><a href="#" onclick="showPage('home')">Home</a></li>
                 <li><a href="#" onclick="showPage('about')">About</a></li>
                 <li><a href="#" onclick="showPage('portfolio')">Portfolio</a></li>
                 <li><a href="#" onclick="showPage('contact')">Contact</a></li>
             </ul>
+            <div class="theme-toggle" onclick="toggleTheme()" id="themeToggle">
+                <div class="theme-circle"></div>
+            </div>
             <div class="mobile-menu" onclick="toggleMobileMenu()">
                 <span></span>
                 <span></span>
@@ -35,7 +38,7 @@
             <section class="hero">
                 <div class="hero-content">
                     <h1>Welcome to the Universe</h1>
-                    <p>I'm a passionate developer exploring the infinite possibilities of code, creating digital experiences that reach for the stars.</p>
+                    <p>I'm a passionate, curiosity-driven problem solver exploring the infinite possibilities of our grand universe, creating experiences that reach for the stars and galaxies.</p>
                     <a href="#" class="cta-button" onclick="showPage('portfolio')">Explore My Work</a>
                 </div>
             </section>
@@ -47,11 +50,13 @@
                 <h2>About Me</h2>
             </div>
             <div class="page-content">
-                <p>Welcome to my corner of the digital universe! I'm a developer who believes that great code, like the cosmos, is both beautiful and functional.</p>
+                <p>Welcome to my corner of the digital universe! I'm a mathematician and physicist by training, a builder by passion, and a dreamer by philosophy. I thrive at the intersection of theory and application, where abstract ideas become real projects that push the boundaries of what's possible.</p>
                 <br>
-                <p>My journey began with curiosity about how things work, and has evolved into a passion for creating elegant solutions to complex problems. I specialize in web development, with experience in modern frameworks and a love for clean, efficient code.</p>
+                <p>At the heart of my journey is a simple principle: <strong>everything is possible</strong>. Whether I'm exploring new frontiers in AI, physics, or business, I see each challenge as an invitation to expand what humanity can do.</p>
                 <br>
-                <p>When I'm not coding, you can find me stargazing, reading about space exploration, or working on personal projects that push the boundaries of what's possible.</p>
+                <p>My long-term dream is to build personal spaceships and make space exploration accessible for everyone. Until then, I'm building the skills, knowledge, and ventures that bring that future closer, one step at a time.</p>
+                <br>
+                <p>When I'm not coding or designing experiments, I'm stargazing, learning new languages, or building ventures that test how ideas scale in the real world. Each pursuit, whether scientific or creative, connects back to my lifelong goal: making the improbable possible and guiding curious minds toward their own frontiers of possibility.</p>
             </div>
         </div>
 
@@ -63,43 +68,57 @@
             <div class="page-content">
                 <p>Here are some projects I've worked on, each one a small universe of its own:</p>
                 <div class="portfolio-grid">
-                    <div class="portfolio-item" onclick="showPage('project-nebula')">
-                        <h3>Project Nebula</h3>
-                        <p>A stunning web application that visualizes data like star formations. Built with modern JavaScript and Three.js for immersive 3D experiences.</p>
-                        <div class="project-tech">
-                            <span class="tech-tag">JavaScript</span>
-                            <span class="tech-tag">Three.js</span>
-                            <span class="tech-tag">WebGL</span>
-                        </div>
-                        <div class="view-project">View Project →</div>
-                    </div>
-                    <div class="portfolio-item" onclick="showPage('project-galaxy')">
-                        <h3>Galaxy Dashboard</h3>
-                        <p>An intuitive admin dashboard with a space-themed interface. Features real-time data updates and smooth animations.</p>
-                        <div class="project-tech">
-                            <span class="tech-tag">React</span>
-                            <span class="tech-tag">Node.js</span>
-                            <span class="tech-tag">Socket.io</span>
-                        </div>
-                        <div class="view-project">View Project →</div>
-                    </div>
-                    <div class="portfolio-item" onclick="showPage('project-cosmic')">
-                        <h3>Cosmic Commerce</h3>
-                        <p>E-commerce platform with a sleek, modern design. Integrated payment systems and responsive design for all devices.</p>
-                        <div class="project-tech">
-                            <span class="tech-tag">Next.js</span>
-                            <span class="tech-tag">Stripe</span>
-                            <span class="tech-tag">MongoDB</span>
-                        </div>
-                        <div class="view-project">View Project →</div>
-                    </div>
-                    <div class="portfolio-item" onclick="showPage('project-stellar')">
-                        <h3>Stellar API</h3>
-                        <p>RESTful API service designed for scalability and performance. Clean architecture with comprehensive documentation.</p>
+                    <div class="portfolio-item" onclick="showPage('project-stablecoin')">
+                        <h3>Stablecoin De-Peg Prediction</h3>
+                        <p>Data analytics project forecasting stablecoin de-peg events using machine learning. Built SQL + Python pipeline achieving 95-98% ROC-AUC accuracy.</p>
                         <div class="project-tech">
                             <span class="tech-tag">Python</span>
-                            <span class="tech-tag">FastAPI</span>
-                            <span class="tech-tag">PostgreSQL</span>
+                            <span class="tech-tag">SQL</span>
+                            <span class="tech-tag">DuckDB</span>
+                            <span class="tech-tag">Machine Learning</span>
+                        </div>
+                        <div class="view-project">View Project →</div>
+                    </div>
+                    <div class="portfolio-item" onclick="showPage('project-youtube')">
+                        <h3>YouTube Shorts Extension</h3>
+                        <p>Chrome extension converting YouTube Shorts to normal video UI. Featured on Chrome Web Store with 500+ users and 5.0/5.0 rating.</p>
+                        <div class="project-tech">
+                            <span class="tech-tag">JavaScript</span>
+                            <span class="tech-tag">Web API</span>
+                            <span class="tech-tag">DOM Manipulation</span>
+                        </div>
+                        <div class="view-project">View Project →</div>
+                    </div>
+                    <div class="portfolio-item" onclick="showPage('project-astrophysics')">
+                        <h3>Astrophysics Research</h3>
+                        <p>Processed gravitationally lensed dusty star-forming galaxy (DSFG) data, reconstructed galaxy images, and calculated redshift using Python and specialized astrophysical software.</p>
+                        <div class="project-tech">
+                            <span class="tech-tag">Python</span>
+                            <span class="tech-tag">Astropy</span>
+                            <span class="tech-tag">SAOImageDS9</span>
+                            <span class="tech-tag">Astrophysics</span>
+                        </div>
+                        <div class="view-project">View Project →</div>
+                    </div>
+                    <div class="portfolio-item" onclick="showPage('project-rocket')">
+                        <h3>High Power Rocket Launch</h3>
+                        <p>Designed and built H-class motor rocket using CAD, 3D printing, and simulation. Successfully launched to 400m with NAR Level 1 certification.</p>
+                        <div class="project-tech">
+                            <span class="tech-tag">Fusion 360</span>
+                            <span class="tech-tag">OpenRocket</span>
+                            <span class="tech-tag">3D Printing</span>
+                            <span class="tech-tag">Engineering</span>
+                        </div>
+                        <div class="view-project">View Project →</div>
+                    </div>
+                    <div class="portfolio-item" onclick="showPage('project-kyrics')">
+                        <h3>Kyrics - K-Pop Themed Korean Learning Platform</h3>
+                        <p>Web service for learning Korean through K-pop lyrics. Led 11-person team to launch MVP, acquired 500+ beta subscriptions.</p>
+                        <div class="project-tech">
+                            <span class="tech-tag">Product Management</span>
+                            <span class="tech-tag">Figma</span>
+                            <span class="tech-tag">Notion</span>
+                            <span class="tech-tag">Web Development</span>
                         </div>
                         <div class="view-project">View Project →</div>
                     </div>
@@ -116,15 +135,15 @@
                 <p>Ready to embark on a project together? Let's connect and create something extraordinary!</p>
                 <br>
                 <div class="contact-info">
-                    <a class="icon-button" href="mailto:your.email@example.com" title="Email">
+                    <a class="icon-button" href="mailto:0dgkim@google.com" title="Email">
                         <img src="img/icon-email.png" alt="" aria-hidden="true" />
                         <span>Email</span>
                     </a>
-                    <a class="icon-button" href="https://github.com/yourusername" target="_blank" rel="noopener" title="GitHub">
+                    <a class="icon-button" href="https://github.com/8dgkim" target="_blank" rel="noopener" title="GitHub">
                         <img src="img/icon-github.png" alt="" aria-hidden="true" />
                         <span>GitHub</span>
                     </a>
-                    <a class="icon-button" href="https://linkedin.com/in/yourprofile" target="_blank" rel="noopener" title="LinkedIn">
+                    <a class="icon-button" href="https://linkedin.com/in/donggyukim" target="_blank" rel="noopener" title="LinkedIn">
                         <img src="img/icon-linkedin.png" alt="" aria-hidden="true" />
                         <span>LinkedIn</span>
                     </a>
@@ -135,185 +154,238 @@
         </div>
 
         <!-- Project Pages -->
-        <!-- Project Nebula -->
-        <div id="project-nebula" class="page project-page">
+        <!-- Stablecoin De-Peg Prediction -->
+        <div id="project-stablecoin" class="page project-page">
             <div class="page-header">
-                <h2>Project Nebula</h2>
+                <h2>Stablecoin De-Peg Prediction</h2>
                 <button class="back-button" onclick="showPage('portfolio')">← Back to Portfolio</button>
             </div>
             <div class="page-content">
                 <div class="project-hero">
                     <div class="project-image">
-                        <div class="placeholder-image">Project Screenshot</div>
+                        <div class="placeholder-image">Data Analytics Dashboard</div>
                     </div>
                     <div class="project-details">
-                        <h3>Data Visualization in 3D Space</h3>
-                        <p>Project Nebula transforms complex datasets into beautiful, interactive 3D visualizations that help users explore data like never before.</p>
-                        
-                        <div class="project-tech">
-                            <span class="tech-tag">JavaScript</span>
-                            <span class="tech-tag">Three.js</span>
-                            <span class="tech-tag">WebGL</span>
-                            <span class="tech-tag">D3.js</span>
-                        </div>
-
-                        <div class="project-links">
-                            <a href="#" class="project-link">Live Demo</a>
-                            <a href="#" class="project-link secondary">GitHub</a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="project-description">
-                    <h4>Overview</h4>
-                    <p>This project was born from the need to make complex data more accessible and engaging. By leveraging WebGL and Three.js, I created an immersive environment where users can navigate through data points as if they were stars in a galaxy.</p>
-                    
-                    <h4>Key Features</h4>
-                    <ul>
-                        <li>Interactive 3D data visualization</li>
-                        <li>Real-time data filtering and clustering</li>
-                        <li>Smooth camera controls and animations</li>
-                        <li>Responsive design for all devices</li>
-                        <li>Performance optimization for large datasets</li>
-                    </ul>
-
-                    <h4>Technical Challenges</h4>
-                    <p>The biggest challenge was optimizing performance while maintaining visual fidelity. I implemented LOD (Level of Detail) systems and efficient data structures to handle thousands of data points smoothly.</p>
-                </div>
-            </div>
-        </div>
-
-        <!-- Project Galaxy Dashboard -->
-        <div id="project-galaxy" class="page project-page">
-            <div class="page-header">
-                <h2>Galaxy Dashboard</h2>
-                <button class="back-button" onclick="showPage('portfolio')">← Back to Portfolio</button>
-            </div>
-            <div class="page-content">
-                <div class="project-hero">
-                    <div class="project-image">
-                        <div class="placeholder-image">Dashboard Screenshot</div>
-                    </div>
-                    <div class="project-details">
-                        <h3>Real-time Admin Dashboard</h3>
-                        <p>A comprehensive dashboard solution with real-time data updates, beautiful animations, and an intuitive space-themed interface.</p>
-                        
-                        <div class="project-tech">
-                            <span class="tech-tag">React</span>
-                            <span class="tech-tag">Node.js</span>
-                            <span class="tech-tag">Socket.io</span>
-                            <span class="tech-tag">Chart.js</span>
-                        </div>
-
-                        <div class="project-links">
-                            <a href="#" class="project-link">Live Demo</a>
-                            <a href="#" class="project-link secondary">GitHub</a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="project-description">
-                    <h4>Overview</h4>
-                    <p>Galaxy Dashboard provides administrators with real-time insights into their systems through beautiful, space-themed visualizations and intuitive controls.</p>
-                    
-                    <h4>Key Features</h4>
-                    <ul>
-                        <li>Real-time data streaming with WebSockets</li>
-                        <li>Interactive charts and graphs</li>
-                        <li>Customizable widget layout</li>
-                        <li>Dark theme with space aesthetics</li>
-                        <li>Mobile-responsive design</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-
-        <!-- Project Cosmic Commerce -->
-        <div id="project-cosmic" class="page project-page">
-            <div class="page-header">
-                <h2>Cosmic Commerce</h2>
-                <button class="back-button" onclick="showPage('portfolio')">← Back to Portfolio</button>
-            </div>
-            <div class="page-content">
-                <div class="project-hero">
-                    <div class="project-image">
-                        <div class="placeholder-image">E-commerce Screenshot</div>
-                    </div>
-                    <div class="project-details">
-                        <h3>Modern E-commerce Platform</h3>
-                        <p>A full-featured e-commerce solution with integrated payments, inventory management, and a beautiful user experience.</p>
-                        
-                        <div class="project-tech">
-                            <span class="tech-tag">Next.js</span>
-                            <span class="tech-tag">Stripe</span>
-                            <span class="tech-tag">MongoDB</span>
-                            <span class="tech-tag">Tailwind CSS</span>
-                        </div>
-
-                        <div class="project-links">
-                            <a href="#" class="project-link">Live Demo</a>
-                            <a href="#" class="project-link secondary">GitHub</a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="project-description">
-                    <h4>Overview</h4>
-                    <p>A complete e-commerce solution built with modern technologies, featuring secure payments, inventory management, and an exceptional user experience.</p>
-                    
-                    <h4>Key Features</h4>
-                    <ul>
-                        <li>Secure payment processing with Stripe</li>
-                        <li>Product catalog with search and filtering</li>
-                        <li>User authentication and profiles</li>
-                        <li>Admin panel for inventory management</li>
-                        <li>Mobile-first responsive design</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-
-        <!-- Project Stellar API -->
-        <div id="project-stellar" class="page project-page">
-            <div class="page-header">
-                <h2>Stellar API</h2>
-                <button class="back-button" onclick="showPage('portfolio')">← Back to Portfolio</button>
-            </div>
-            <div class="page-content">
-                <div class="project-hero">
-                    <div class="project-image">
-                        <div class="placeholder-image">API Documentation</div>
-                    </div>
-                    <div class="project-details">
-                        <h3>Scalable RESTful API</h3>
-                        <p>A high-performance API service built with Python and FastAPI, designed for scalability and developer experience.</p>
+                        <h3>Predicting Stablecoin De-Peg Events</h3>
+                        <p>Google Data Analytics Capstone project forecasting stablecoin de-peg events for fictional fintech Oruda's Risk team using machine learning.</p>
                         
                         <div class="project-tech">
                             <span class="tech-tag">Python</span>
-                            <span class="tech-tag">FastAPI</span>
-                            <span class="tech-tag">PostgreSQL</span>
-                            <span class="tech-tag">Docker</span>
+                            <span class="tech-tag">SQL</span>
+                            <span class="tech-tag">DuckDB</span>
+                            <span class="tech-tag">Machine Learning</span>
+                            <span class="tech-tag">Logistic Regression</span>
                         </div>
 
                         <div class="project-links">
-                            <a href="#" class="project-link">API Docs</a>
-                            <a href="#" class="project-link secondary">GitHub</a>
+                            <a href="https://github.com/8dgkim/google-data-analytics-case-study" class="project-link" target="_blank">GitHub Repository</a>
                         </div>
                     </div>
                 </div>
 
                 <div class="project-description">
                     <h4>Overview</h4>
-                    <p>Stellar API provides a robust, scalable backend solution with comprehensive documentation, authentication, and high-performance data processing capabilities.</p>
+                    <p>This capstone project addressed the critical business need of forecasting stablecoin de-peg events for risk management. I built a comprehensive data pipeline and machine learning model to predict next-day de-peg risks with high accuracy.</p>
                     
-                    <h4>Key Features</h4>
+                    <h4>Key Achievements</h4>
                     <ul>
-                        <li>High-performance async API with FastAPI</li>
-                        <li>JWT authentication and authorization</li>
-                        <li>Comprehensive API documentation</li>
-                        <li>Database migrations and ORM</li>
-                        <li>Docker containerization</li>
+                        <li>Processed 700+ daily observations of stablecoin, Bitcoin, and U.S. dollar index data</li>
+                        <li>Engineered features including volatility, returns, and deviations</li>
+                        <li>Labeled 40+ historical de-peg events for model training</li>
+                        <li>Achieved ROC-AUC of 0.95-0.98 with logistic regression models</li>
+                        <li>Proposed >2% deviation alert system for stakeholders</li>
                     </ul>
+
+                    <h4>Technical Implementation</h4>
+                    <p>Built a robust SQL + Python pipeline using DuckDB for efficient data processing. The machine learning approach focused on logistic regression models optimized for financial time series data, with careful attention to feature engineering and model validation.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- YouTube Shorts Extension -->
+        <div id="project-youtube" class="page project-page">
+            <div class="page-header">
+                <h2>YouTube Shorts Extension</h2>
+                <button class="back-button" onclick="showPage('portfolio')">← Back to Portfolio</button>
+            </div>
+            <div class="page-content">
+                <div class="project-hero">
+                    <div class="project-image">
+                        <div class="placeholder-image">Chrome Extension Interface</div>
+                    </div>
+                    <div class="project-details">
+                        <h3>YouTube Shorts → Normal Video Extension</h3>
+                        <p>Chrome extension that converts YouTube Shorts into standard YouTube video interface, enhancing user experience and control.</p>
+                        
+                        <div class="project-tech">
+                            <span class="tech-tag">JavaScript</span>
+                            <span class="tech-tag">Web API</span>
+                            <span class="tech-tag">DOM Manipulation</span>
+                        </div>
+
+                        <div class="project-links">
+                            <a href="https://chromewebstore.google.com/detail/youtube-shorts-to-normal/amicmnmoekicldlhhkglfkahfgedobmb" class="project-link" target="_blank">Chrome Web Store</a>
+                            <a href="https://github.com/8dgkim/yt-shorts-to-normal" class="project-link secondary" target="_blank">GitHub</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-description">
+                    <h4>Overview</h4>
+                    <p>This Chrome extension addresses user frustration with YouTube Shorts by automatically converting them to the familiar standard YouTube interface, providing better controls and viewing experience.</p>
+                    
+                    <h4>Key Achievements</h4>
+                    <ul>
+                        <li>Peaked at 4,000 users with 500+ currently active</li>
+                        <li>Achieved Featured badge on Chrome Web Store</li>
+                        <li>Maintained 5.0/5.0 user rating</li>
+                        <li>Passed Google Web Store review process</li>
+                        <li>Continuously iterated based on user feedback</li>
+                    </ul>
+
+                    <h4>Technical Implementation</h4>
+                    <p>Built using vanilla JavaScript with Web APIs, focusing on efficient DOM manipulation and seamless user experience. The extension monitors page changes and automatically applies the conversion while maintaining YouTube's functionality.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Astrophysics Research -->
+        <div id="project-astrophysics" class="page project-page">
+            <div class="page-header">
+                <h2>Astrophysics Research</h2>
+                <button class="back-button" onclick="showPage('portfolio')">← Back to Portfolio</button>
+            </div>
+            <div class="page-content">
+                <div class="project-hero">
+                    <div class="project-image">
+                        <div class="placeholder-image">Astrophysics Data Visualization</div>
+                    </div>
+                    <div class="project-details">
+                        <h3>Gravitationally Lensed Dusty Star-Forming Galaxy Analysis</h3>
+                        <p>Analyzed CO(J=4-3) line detection data from the Northern Extended Millimeter Array (NOEMA) for a gravitationally lensed dusty star-forming galaxy (DSFG) at z = 3.87.</p>
+                        
+                        <div class="project-tech">
+                            <span class="tech-tag">Python</span>
+                            <span class="tech-tag">Astropy</span>
+                            <span class="tech-tag">Spectral-Cube</span>
+                            <span class="tech-tag">SAOImageDS9</span>
+                            <span class="tech-tag">Jupyter Notebook</span>
+                            <span class="tech-tag">lensmodel</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-description">
+                    <h4>Overview</h4>
+                    <p>This research focused on processing and analyzing complex 3D data cubes from NOEMA observations of the DSFG ACT-S J0116-0004. The goal was to understand the spatial distribution and intensity of CO emission, reconstruct the pre-lensing galaxy image, and calculate its redshift.</p>
+                    
+                    <h4>Key Achievements</h4>
+                    <ul>
+                        <li>Processed 3D data cube with sky coordinates and velocity channels using SAOImageDS9 and Python.</li>
+                        <li>Wrote Python scripts for efficient data management, visualization, and debugging in Jupyter Notebook.</li>
+                        <li>Generated integrated zeroth moment maps with contour maps for initial data parsing.</li>
+                        <li>Calculated redshift (z) based on CO(J=4-3) rest frequency and observed frequency.</li>
+                        <li>Employed `lensmodel` software to "delens" DSFG data, reconstructing original galaxy image and quantifying magnification factor (μ).</li>
+                        <li>Developed comprehensive visual representation of research findings, creating a four-panel image showcasing observed moment map, model moment map, residual noise map, and reconstructed map.</li>
+                        <li>Collaborated with peers and provided guidance on utilizing Linux environment through Secure Shell Protocol (SSH).</li>
+                        <li>Attended productive daily and weekly meetings, fostering open dialogue and discussing future directions.</li>
+                        <li>Extensively reviewed pertinent literature on DSFGs, their analysis techniques, and underlying theoretical foundations.</li>
+                    </ul>
+
+                    <h4>Technical Implementation</h4>
+                    <p>The project involved extensive use of Python with libraries like Astropy and Spectral-Cube for data manipulation and analysis. SAOImageDS9 was crucial for initial data exploration and extraction. The `lensmodel` software was employed for gravitational lensing reconstruction, a key step in understanding the true properties of the distant galaxy. Jupyter Notebooks were used for an organized and reproducible workflow, and SSH for collaborative work in a Linux environment.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- High Power Rocket Launch -->
+        <div id="project-rocket" class="page project-page">
+            <div class="page-header">
+                <h2>High Power Rocket Launch</h2>
+                <button class="back-button" onclick="showPage('portfolio')">← Back to Portfolio</button>
+            </div>
+            <div class="page-content">
+                <div class="project-hero">
+                    <div class="project-image">
+                        <div class="placeholder-image">Rocket Launch Photo</div>
+                    </div>
+                    <div class="project-details">
+                        <h3>MDRA Red Glare 2023 Rocket Launch</h3>
+                        <p>Designed, built, and successfully launched an H-class motor rocket at the MDRA Red Glare event in Maryland, earning NAR Level 1 certification.</p>
+                        
+                        <div class="project-tech">
+                            <span class="tech-tag">Fusion 360</span>
+                            <span class="tech-tag">OpenRocket</span>
+                            <span class="tech-tag">3D Printing</span>
+                            <span class="tech-tag">Laser Cutting</span>
+                            <span class="tech-tag">Engineering</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-description">
+                    <h4>Overview</h4>
+                    <p>This engineering project involved the complete design, simulation, construction, and successful launch of a high-power rocket. The project demonstrated skills in CAD design, simulation, manufacturing, and real-world testing.</p>
+                    
+                    <h4>Key Achievements</h4>
+                    <ul>
+                        <li>Successfully launched rocket to 400m altitude</li>
+                        <li>Achieved full parachute deployment and safe landing</li>
+                        <li>Completed damage-free recovery</li>
+                        <li>Earned Level 1 High Power Rocketry Certification from NAR</li>
+                        <li>Modified parachute deployment system pre-launch</li>
+                    </ul>
+
+                    <h4>Technical Process</h4>
+                    <p>Used OpenRocket Simulator for flight dynamics modeling and Fusion 360 for detailed CAD design. Manufacturing involved 3D printing for custom components and laser cutting for precision parts. The project required careful attention to safety protocols and NAR certification requirements.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Kyrics Korean Learning Platform -->
+        <div id="project-kyrics" class="page project-page">
+            <div class="page-header">
+                <h2>Kyrics - Korean Learning Platform</h2>
+                <button class="back-button" onclick="showPage('portfolio')">← Back to Portfolio</button>
+            </div>
+            <div class="page-content">
+                <div class="project-hero">
+                    <div class="project-image">
+                        <div class="placeholder-image">Kyrics Platform Interface</div>
+                    </div>
+                    <div class="project-details">
+                        <h3>Web Service for Learning Korean with K-pop Lyrics</h3>
+                        <p>Product management role leading the development of an innovative language learning platform that uses K-pop lyrics to teach Korean.</p>
+                        
+                        <div class="project-tech">
+                            <span class="tech-tag">Product Management</span>
+                            <span class="tech-tag">Figma</span>
+                            <span class="tech-tag">Notion</span>
+                            <span class="tech-tag">Web Development</span>
+                            <span class="tech-tag">Team Leadership</span>
+                        </div>
+
+                        <div class="project-links">
+                            <a href="https://developing-hammer-af0.notion.site/Kyrics-c47de2294a474bda9808bb2d8b9c8f5c" class="project-link" target="_blank">Official Notion Page</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-description">
+                    <h4>Overview</h4>
+                    <p>Kyrics was an innovative EdTech project that made Korean language learning engaging by using popular K-pop lyrics as learning material. As Product Manager, I led the entire product development lifecycle from concept to launch.</p>
+                    
+                    <h4>Key Achievements</h4>
+                    <ul>
+                        <li>Directed 11-person cross-functional team</li>
+                        <li>Launched MVP within five weeks</li>
+                        <li>Acquired 500+ beta waitlist subscriptions</li>
+                        <li>Conducted comprehensive customer research</li>
+                        <li>Optimized landing page for conversion</li>
+                    </ul>
+
+                    <h4>Leadership & Process</h4>
+                    <p>Coordinated workflow using Figma for wireframing and Notion for project management and documentation. Ensured clear communication across design and development teams while maintaining focus on user needs and business objectives. The project demonstrated skills in product strategy, team leadership, and agile development methodologies.</p>
                 </div>
             </div>
         </div>

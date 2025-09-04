@@ -1,3 +1,28 @@
+// Theme management
+let currentTheme = 'blue';
+const themes = ['blue', 'purple', 'orange'];
+
+function toggleTheme() {
+    const currentIndex = themes.indexOf(currentTheme);
+    const nextIndex = (currentIndex + 1) % themes.length;
+    currentTheme = themes[nextIndex];
+    
+    // Apply theme to body
+    document.body.setAttribute('data-theme', currentTheme === 'blue' ? '' : currentTheme);
+    
+    // Save theme preference
+    localStorage.setItem('portfolioTheme', currentTheme);
+}
+
+// Load saved theme on page load
+function loadSavedTheme() {
+    const savedTheme = localStorage.getItem('portfolioTheme');
+    if (savedTheme && themes.includes(savedTheme)) {
+        currentTheme = savedTheme;
+        document.body.setAttribute('data-theme', currentTheme === 'blue' ? '' : currentTheme);
+    }
+}
+
 // Generate animated stars
 function createStars() {
     const starsContainer = document.getElementById('stars');
@@ -60,6 +85,7 @@ window.addEventListener('scroll', () => {
 
 // Initialize
 document.addEventListener('DOMContentLoaded', () => {
+    loadSavedTheme();
     createStars();
     createParticles();
 });
