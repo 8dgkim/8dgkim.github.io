@@ -2,9 +2,8 @@
 title_en: High-power rocket
 title_ko: 고출력 로켓
 subtitle_en: An H-class rocket, from CAD to recovery.
-description_en: Designing, building, and flying an H-class rocket to NAR Level 1 certification.
-description_ko: H급 모터 로켓을 설계하고, 만들고, 날려서 NAR 레벨 1 인증을 받기까지.
-date: 2023-04-02
+section: operations
+when: 2023-04-02
 published: 2026-11-05
 image: figures/pad.jpg
 ---

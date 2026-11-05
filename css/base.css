@@ -74,13 +74,12 @@ html[data-lang="ko"] .i18n[lang="en"], html:not([data-lang="ko"]) .i18n[lang="ko
 .links { list-style: none; margin: 18px 0 0; padding: 0; display: flex; flex-wrap: wrap; font: 500 .92em/1.8 var(--ui); }
 .links li + li::before { content: "·"; color: var(--dim); margin: 0 .55em; }
 
-/* notes list: date, then title and one line */
+/* notes list: date, then title */
 .notelist { list-style: none; margin: 0; padding: 0; }
 .notelist li { display: grid; grid-template-columns: 7.4em 1fr; column-gap: 18px; align-items: baseline; padding: 7px 0; }
 .notelist time { font: 500 .82em var(--ui); font-variant-numeric: tabular-nums; color: var(--dim); white-space: nowrap; }
 .notelist a { font: 600 1em/1.35 var(--ui); color: var(--ink); }
 .notelist a:hover { color: var(--accent); text-decoration: none; }
-.notelist .desc { grid-column: 2; color: var(--dim); font-size: .9em; line-height: 1.45; }
 
 .foot { position: relative; z-index: 1; margin-top: 64px; padding: 18px 0 48px; border-top: 1px solid var(--line);
   font: 13px var(--ui); color: var(--dim); }
@@ -98,6 +97,9 @@ html[data-lang="ko"] .i18n[lang="en"], html:not([data-lang="ko"]) .i18n[lang="ko
 .note > header h1 { font-size: clamp(30px, 4.4vw, 44px); margin: 0 0 10px; font-weight: 750; letter-spacing: -0.02em; }
 .note > header .sub { margin: 0 0 10px; color: var(--ink2); font-style: italic; }
 .note-date { font: 500 14px var(--ui); font-variant-numeric: tabular-nums; color: var(--dim); }
+/* the other dates, small at the end of the page: label, date; one pair per row */
+.note-dates { display: grid; grid-template-columns: auto auto; justify-content: end; column-gap: .7em; row-gap: 2px;
+  margin: 3.2em 0 0; font: 500 12.5px var(--ui); font-variant-numeric: tabular-nums; color: var(--dim); }
 .note h2 { font-size: 1.45em; margin: 1.8em 0 .5em; }
 .note h3 { font-size: 1.15em; margin: 1.5em 0 .4em; }
 .note ul, .note ol { padding-left: 1.4em; }
@@ -162,7 +164,6 @@ mark { background: color-mix(in srgb, var(--accent) 28%, transparent); color: in
 }
 @media (max-width: 520px) {
   .notelist li { grid-template-columns: 1fr; padding: 9px 0; }
-  .notelist .desc { grid-column: 1; }
 }
 
 @media (prefers-reduced-motion: reduce) {

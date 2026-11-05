@@ -1,6 +1,6 @@
 /* ==========================================================================
    site.js : on every page, links to other websites open in a new tab (and the browser switches to it).
-   Links within this site (the same origin: home, notes, operations, the visualization on github.io) stay in the tab,
+   Links within this site (the same origin: home, posts, the visualization on github.io) stay in the tab,
    as do jumps within the page and mail links; a link that sets its own target keeps it.
    ========================================================================== */
 (function () {

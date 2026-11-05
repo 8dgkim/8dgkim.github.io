@@ -9,9 +9,9 @@
 <meta property="og:title" content="Kim DongGyu">
 <meta property="og:description" content="Kim DongGyu, master's student in the School of Electrical Engineering at KAIST. Everything is possible.">
 <!-- icons: bump ?v= when they change (browsers keep favicons in a cache of their own) -->
-<link rel="icon" href="favicon-32.png?v=2" sizes="32x32" type="image/png">
-<link rel="icon" href="favicon.svg?v=2" type="image/svg+xml">
-<link rel="apple-touch-icon" href="apple-touch-icon.png?v=2">
+<link rel="icon" href="assets/icons/favicon-32.png?v=2" sizes="32x32" type="image/png">
+<link rel="icon" href="assets/icons/favicon.svg?v=2" type="image/svg+xml">
+<link rel="apple-touch-icon" href="assets/icons/apple-touch-icon.png?v=2">
 <script>try { var d = document.documentElement, t = localStorage.getItem('theme'), l = localStorage.getItem('lang');
   if (t) d.dataset.theme = t;
   if (!l) l = /^ko\b/i.test(navigator.language || '') ? 'ko' : 'en';
@@ -59,30 +59,30 @@
     </ul>
   </section>
 
-  <!-- shown once there are publications: remove "hidden" and add the first <li> -->
-  <section aria-labelledby="research-h" hidden>
+  <!-- the lists below are made by tools/build.py from posts/*/index.md (by their section);
+       a section shows once it has something in it -->
+  <section data-list="research" aria-labelledby="research-h" hidden>
     <h2 id="research-h"><span class="i18n" lang="en">Research</span><span class="i18n" lang="ko">연구</span></h2>
     <ul class="notelist">
+      <!-- build:research (made by tools/build.py) -->
+      <!-- /build:research -->
     </ul>
   </section>
 
-  <!-- shown once there is a note (tools/build.py) -->
-  <section aria-labelledby="notes-h" hidden>
+  <section data-list="notes" aria-labelledby="notes-h" hidden>
     <h2 id="notes-h"><span class="i18n" lang="en">Notes</span><span class="i18n" lang="ko">글</span></h2>
-    <!-- the list is made by tools/build.py from notes/*/index.md -->
     <ul class="notelist">
       <!-- build:notes (made by tools/build.py) -->
       <!-- /build:notes -->
     </ul>
   </section>
 
-  <section aria-labelledby="ops-h">
+  <section data-list="operations" aria-labelledby="ops-h">
     <h2 id="ops-h"><span class="i18n" lang="en">Operations</span><span class="i18n" lang="ko">작업</span></h2>
-    <!-- the list is made by tools/build.py from operations/*/index.md -->
     <ul class="notelist">
       <!-- build:operations (made by tools/build.py) -->
-      <li><time datetime="2026-11-04">2026-11-04</time><a href="https://8dgkim.github.io/geometry-of-spacetime/">Geometry of Spacetime</a><span class="desc i18n" lang="en">An interactive tour of general relativity.</span><span class="desc i18n" lang="ko">상호작용하며 배우는 상대성이론.</span></li>
-      <li><time datetime="2023-04-02">2023-04-02</time><a href="operations/2023-04-02/"><span class="i18n" lang="en">High-power rocket</span><span class="i18n" lang="ko">고출력 로켓</span></a><span class="desc i18n" lang="en">Designing, building, and flying an H-class rocket to NAR Level 1 certification.</span><span class="desc i18n" lang="ko">H급 모터 로켓을 설계하고, 만들고, 날려서 NAR 레벨 1 인증을 받기까지.</span></li>
+      <li><time datetime="2026-11-04">2026-11-04</time><a href="https://8dgkim.github.io/geometry-of-spacetime/">Geometry of Spacetime</a></li>
+      <li><time datetime="2023-04-02">2023-04-02</time><a href="posts/2023-04-02/"><span class="i18n" lang="en">High-power rocket</span><span class="i18n" lang="ko">고출력 로켓</span></a></li>
       <!-- /build:operations -->
     </ul>
   </section>
