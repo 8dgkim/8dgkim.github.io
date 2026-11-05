@@ -1,0 +1,179 @@
+/* ==========================================================================
+   base.css : layout and components, the same for every theme
+   Only theme tokens (css/themes.css) are used for color, typeface, and radius,
+   so a theme never needs to know about a component to restyle it.
+   ========================================================================== */
+
+/* ---------------- base ---------------- */
+* { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; }
+body { margin: 0; min-height: 100vh; background: var(--page-bg); background-attachment: fixed; color: var(--ink);
+  font: var(--size)/var(--lh) var(--serif); }
+a { color: var(--accent); text-decoration: none; }
+a:hover { text-decoration: underline; text-underline-offset: .18em; text-decoration-thickness: 1px; }
+:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+::selection { background: color-mix(in srgb, var(--accent) 35%, transparent); }
+h1, h2, h3, h4 { font-family: var(--ui); line-height: 1.2; letter-spacing: -0.01em; }
+p { margin: 0.65em 0; }
+b, strong { font-weight: 650; }
+img, video { max-width: 100%; }
+
+/* ---------------- theme button: the name, then a half-disk that turns a fifth of a circle per step ----------------
+   the half-disk is drawn in CSS, not taken from a font, so its size and position do not change with the theme's typeface */
+.theme-btn { display: flex; align-items: center; gap: 7px; flex: none; white-space: nowrap; height: 34px; padding: 0 11px;
+  background: transparent; border: 1px solid var(--line); color: var(--ink2); border-radius: var(--r-btn); font: 600 13px var(--ui); cursor: pointer; }
+.theme-btn:hover { border-color: var(--dim); color: var(--ink); }
+.theme-btn[hidden] { display: none; }   /* shown by js/theme.js; without JS there is only the default theme */
+/* icon only; the name appears in a small label under the button on hover or keyboard focus */
+.theme-btn { position: relative; justify-content: center; width: 34px; padding: 0; }
+.theme-btn svg { display: block; width: 16px; height: 16px; }
+.lang-btn { font: 700 14px/1 var(--ui); }
+/* home page languages: show only the current one (js/lang.js) */
+html[data-lang="ko"] .i18n[lang="en"], html:not([data-lang="ko"]) .i18n[lang="ko"] { display: none !important; }
+:lang(ko) { word-break: keep-all; }   /* Korean breaks lines between words, not inside them */
+.theme-btn[data-label]:hover::after, .theme-btn[data-label]:focus-visible::after {
+  content: attr(data-label); position: absolute; top: calc(100% + 6px); right: 0; z-index: 5; white-space: nowrap; padding: 3px 8px;
+  font: 600 12px/1.4 var(--ui); letter-spacing: 0; text-transform: none; color: var(--ink); background: var(--panel);
+  border: 1px solid var(--line); border-radius: 6px; pointer-events: none; }
+.theme-btn .ti { flex: none; width: 13px; height: 13px; border-radius: 50%; border: 1.5px solid currentColor; box-sizing: border-box;
+  background: linear-gradient(90deg, currentColor 50%, transparent 50%); transition: transform .4s cubic-bezier(.3,.7,.3,1); }
+
+/* ---------------- stars (js/stars.js draws them on one fixed canvas behind the page) ---------------- */
+#stars { position: fixed; inset: 0; width: 100%; height: 100%; pointer-events: none; z-index: 0; }
+
+/* ---------------- hero: the live black hole (js/blackhole.js) ---------------- */
+/* the hero is always a night sky, in every theme, so its text keeps fixed light colors */
+.hero { position: relative; z-index: 1; height: min(92vh, 860px); min-height: 420px; display: flex; align-items: flex-end;
+  overflow: hidden; background: #000; border-bottom: 1px solid var(--line); container-type: size;
+  touch-action: pan-y; cursor: grab; user-select: none; -webkit-user-select: none; }
+.hero.grabbing { cursor: grabbing; }
+.hero canvas { position: absolute; inset: 0; width: 100%; height: 100%; display: block; opacity: 0; transition: opacity .9s ease; }
+.hero canvas.on { opacity: 1; }
+/* still fallback, shown until the first frame (or for good without WebGL2): a dark sky */
+.hero .poster { position: absolute; inset: 0; background: radial-gradient(ellipse at 60% 35%, rgba(40,50,80,.22), transparent 70%), #000; }
+.hero-top { position: absolute; top: 14px; right: 16px; z-index: 3; display: flex; gap: 8px; }
+.hero .theme-btn { color: #cfd6e4; border-color: rgba(255,255,255,.18); background: rgba(5,8,14,.35);
+  backdrop-filter: blur(6px); -webkit-backdrop-filter: blur(6px); }
+.hero .theme-btn:hover { color: #fff; border-color: rgba(255,255,255,.4); }
+.hero .theme-btn[data-label]:hover::after, .hero .theme-btn[data-label]:focus-visible::after { color: #e6ebf3; background: rgba(5,8,14,.8); border-color: rgba(255,255,255,.18); }
+.hero .htext { position: relative; z-index: 2; width: 100%; padding: 48px max(22px, calc((100% - 40rem) / 2)) 30px;
+  background: linear-gradient(0deg, rgba(var(--scrim),.94) 0%, rgba(var(--scrim),.62) 55%, transparent 100%);
+  color: #eef2f8; pointer-events: none; }
+.hero .htext * { pointer-events: auto; }
+.hero h1 { font-size: clamp(34px, 5.2vw, 60px); margin: 0 0 8px; font-weight: 750; letter-spacing: -0.025em; }
+.hero .lede { font-size: clamp(17px, 1.6vw, 20px); color: #cfd6e4; margin: 0; }
+
+/* ---------------- the reading column ---------------- */
+.col { position: relative; z-index: 1; max-width: calc(40rem + 44px); margin: 0 auto; padding: 0 22px; }
+.home .col { padding-top: 30px; }
+.col > section { margin-top: 44px; }
+.col > section:first-child { margin-top: 0; }
+.col > section > h2 { font-size: 1.2em; margin: 0 0 12px; }
+
+/* links under the bio: plain words separated by thin dots */
+.links { list-style: none; margin: 18px 0 0; padding: 0; display: flex; flex-wrap: wrap; font: 500 .92em/1.8 var(--ui); }
+.links li + li::before { content: "·"; color: var(--dim); margin: 0 .55em; }
+
+/* notes list: date, then title and one line */
+.notelist { list-style: none; margin: 0; padding: 0; }
+.notelist li { display: grid; grid-template-columns: 7.4em 1fr; column-gap: 18px; align-items: baseline; padding: 7px 0; }
+.notelist time { font: 500 .82em var(--ui); font-variant-numeric: tabular-nums; color: var(--dim); white-space: nowrap; }
+.notelist a { font: 600 1em/1.35 var(--ui); color: var(--ink); }
+.notelist a:hover { color: var(--accent); text-decoration: none; }
+.notelist .desc { grid-column: 2; color: var(--dim); font-size: .9em; line-height: 1.45; }
+
+.foot { position: relative; z-index: 1; margin-top: 64px; padding: 18px 0 48px; border-top: 1px solid var(--line);
+  font: 13px var(--ui); color: var(--dim); }
+
+/* ---------------- note pages ---------------- */
+.topbar { position: sticky; top: 0; z-index: 10; display: flex; align-items: center; gap: 14px; height: 56px; padding: 0 18px;
+  background: color-mix(in srgb, var(--bg) 82%, transparent); backdrop-filter: blur(12px) saturate(1.3); -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--line); font-family: var(--ui); }
+.topbar .home { font-weight: 700; font-size: 15px; color: var(--ink); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.topbar .home:hover { color: var(--accent); text-decoration: none; }
+.topbar .sp { flex: 1; }
+
+.note { padding: 52px 0 10px; }
+.note > header { margin-bottom: 28px; }
+.note > header h1 { font-size: clamp(30px, 4.4vw, 44px); margin: 0 0 10px; font-weight: 750; letter-spacing: -0.02em; }
+.note > header .sub { margin: 0 0 10px; color: var(--ink2); font-style: italic; }
+.note-date { font: 500 14px var(--ui); font-variant-numeric: tabular-nums; color: var(--dim); }
+.note h2 { font-size: 1.45em; margin: 1.8em 0 .5em; }
+.note h3 { font-size: 1.15em; margin: 1.5em 0 .4em; }
+.note ul, .note ol { padding-left: 1.4em; }
+.note li { margin: .3em 0; }
+.note blockquote { margin: 1.2em 0; padding: 2px 0 2px 18px; border-left: 2px solid var(--faint); color: var(--ink2); font-style: italic; }
+.note hr { border: 0; border-top: 1px solid var(--line); margin: 2.2em 0; }
+code { font: .86em var(--mono); background: var(--panel); border: 1px solid var(--line); border-radius: min(var(--r-box), 5px); padding: .05em .35em; }
+pre { margin: 1.2em 0; padding: 14px 16px; overflow-x: auto; background: var(--panel); border: 1px solid var(--line);
+  border-radius: min(var(--r-box), 10px); font-size: .86em; line-height: 1.5; }
+pre code { font-size: 1em; background: none; border: 0; padding: 0; }
+
+/* figures, images, video; .wide lets one break out of the column */
+.note figure { margin: 1.8em 0; }
+.note figure.wide { margin-left: calc(50% - min(50vw - 22px, 34rem)); margin-right: calc(50% - min(50vw - 22px, 34rem)); }
+.note figure img { display: block; width: 100%; height: auto; border-radius: var(--r-box); background: var(--stage); }
+/* a crop from the Markdown (![[x.jpg|16:9]]) sets --ar; the picture is cropped around its center */
+.note figure img[style], .note figure video[style] { aspect-ratio: var(--ar); object-fit: cover; }
+/* a video keeps its own shape: a tall one is centered and no taller than the window */
+.note figure video { display: block; max-width: 100%; max-height: 82vh; width: auto; height: auto; margin: 0 auto;
+  border-radius: var(--r-box); background: #000; }
+.note figure:has(video) figcaption { text-align: center; }
+/* several embeds on one line: a row of equal columns */
+.note .gallery { display: grid; grid-template-columns: repeat(var(--n), minmax(0, 1fr)); gap: 10px; margin: 1.2em 0; }
+.note .gallery figure { margin: 0; }
+/* Obsidian callouts (> [!note] ...) */
+.note blockquote.box { font-style: normal; color: var(--ink); padding: 10px 18px; border: 1px solid var(--line);
+  border-left: 3px solid var(--accent); border-radius: min(var(--r-box), 10px); background: var(--panel); }
+.note blockquote.box > :first-child { margin-top: 4px; }
+mark { background: color-mix(in srgb, var(--accent) 28%, transparent); color: inherit; padding: 0 .12em; border-radius: 2px; }
+.note figcaption { margin-top: 9px; font: 14.5px/1.5 var(--ui); color: var(--ink2); }
+/* placeholder for media not added yet */
+.ph { display: grid; place-items: center; aspect-ratio: 16 / 9; border: 1.5px dashed var(--faint); border-radius: var(--r-box);
+  background: color-mix(in srgb, var(--panel) 60%, transparent); color: var(--dim); font: 14px var(--ui); }
+
+/* statement / aside box */
+.box { margin: 1.4em 0; padding: 10px 18px; background: var(--panel); border: 1px solid var(--line); border-left: 3px solid var(--accent);
+  border-radius: min(var(--r-box), 10px); }
+.box .label { display: block; margin-top: 4px; font: 700 11px var(--ui); letter-spacing: .08em; text-transform: uppercase; color: var(--dim); }
+
+/* tables scroll sideways on their own instead of widening the page */
+.tablewrap { overflow-x: auto; margin: 1.4em 0; }
+.note table { border-collapse: collapse; width: 100%; font: .88em/1.45 var(--ui); }
+.note th, .note td { padding: 7px 10px; border-bottom: 1px solid var(--line); text-align: left; vertical-align: top; }
+.note th { color: var(--dim); font-weight: 600; }
+
+/* footnotes */
+.note sup a { font: 600 .75em var(--ui); }
+.footnotes { margin-top: 3em; padding-top: 1em; border-top: 1px solid var(--line); font-size: .88em; color: var(--ink2); }
+.footnotes ol { padding-left: 1.4em; }
+
+/* math (KaTeX, only on notes that include it) */
+.note .katex { font-size: 1.1em; }   /* KaTeX alone uses 1.21em, large next to these text faces */
+.katex-display { overflow-x: auto; overflow-y: hidden; padding: 4px 0; }
+
+/* plain 404 */
+.lost { padding: 18vh 0 10vh; }
+.lost h1 { font-size: clamp(40px, 7vw, 72px); margin: 0 0 10px; }
+
+/* ---------------- narrow screens ---------------- */
+@media (max-width: 760px) {
+  .hero { height: min(80vh, 640px); min-height: 360px; }
+}
+@media (max-width: 520px) {
+  .notelist li { grid-template-columns: 1fr; padding: 9px 0; }
+  .notelist .desc { grid-column: 1; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero canvas, .theme-btn .ti { transition: none; }
+}
+
+@media print {
+  #stars, .topbar, .theme-btn, .hero-top, .hero canvas { display: none !important; }
+  body { background: #fff; }
+  .hero { height: auto; min-height: 0; background: none; border: 0; }
+  .hero .poster { display: none; }
+  .hero .htext { background: none; color: #000; padding: 0 22px; }
+  .hero .lede { color: #222; }
+}

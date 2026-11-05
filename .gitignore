@@ -1,1 +1,5 @@
-archived/
+archive/
+# pages made by tools/build.py from index.md (GitHub Actions builds them on every push)
+notes/*/index.html
+operations/*/index.html
+__pycache__/

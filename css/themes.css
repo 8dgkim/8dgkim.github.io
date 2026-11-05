@@ -1,0 +1,117 @@
+/* ==========================================================================
+   themes.css : the five themes of Geometry of Spacetime
+   Each block sets one theme's colors, typefaces, star colors, and a few touches.
+   The black hole's own colors (disk ramp, sky band, star tints) are in js/theme.js,
+   because they go to the shader; the --disk-* values here only paint the still fallback.
+   Singularity: Spectral text under Inter Tight headings, slate gradients behind the page, one hot red.
+   Deep Field: the first look, set in IBM Plex Sans.
+   Starlight: cream paper, Source Serif 4; the hero stays a night sky.
+   Cold Steel: gray steel plate, Zilla Slab with stenciled capitals (Big Shoulders Stencil).
+   Death Star: black panels, Libre Franklin text, Barlow Condensed capitals, red rules.
+   ========================================================================== */
+
+/* Singularity is the default, so its values also sit on :root */
+:root, [data-theme="singularity"] {
+  color-scheme: dark;
+  --bg: #04080e; --stage: #01040a; --panel: #0a0f19; --ink: #e9edf3; --ink2: #aeb6c6; --dim: #7c859b;
+  --faint: #2a3040; --grid: #0f1520; --line: #1c2433; --accent: #ec5a3f;
+  --ui: "Inter Tight", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  --serif: Spectral, "Iowan Old Style", "Palatino Linotype", Palatino, "Book Antiqua", Georgia, "Times New Roman", serif;
+  --mono: ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+  --size: 19px; --lh: 1.64; --r-btn: 999px; --r-box: 14px;
+  --page-bg: radial-gradient(1300px 700px at 88% -8%, rgba(78,90,120,.20), transparent 70%),
+             radial-gradient(1000px 600px at -12% 45%, rgba(62,72,98,.14), transparent 70%),
+             radial-gradient(900px 500px at 70% 110%, rgba(236,90,63,.05), transparent 70%), var(--bg);
+  --scrim: 1,4,10;
+  --star-core: #ffffff; --star-g1: #aeb6c6; --star-g2: #ffb08f; --star-g3: #ec5a3f; --particle: #ec5a3f;
+  --disk-a: rgb(179,15,15); --disk-b: rgb(255,71,41); --disk-c: rgb(255,179,148);
+}
+
+[data-theme="deepfield"] {
+  color-scheme: dark;
+  --bg: #0a0e16; --stage: #070a11; --panel: #0f1522; --ink: #e8ecf4; --ink2: #b4bdcf; --dim: #7b869c;
+  --faint: #2a3347; --grid: #182033; --line: #222b3e; --accent: #7cc4ff;
+  --ui: "IBM Plex Sans", system-ui, sans-serif; --serif: "IBM Plex Sans", system-ui, sans-serif;
+  --size: 18px; --lh: 1.66; --r-btn: 9px; --r-box: 16px;
+  --page-bg: var(--bg);
+  --scrim: 5,7,12;
+  --star-core: #ffffff; --star-g1: #87ceeb; --star-g2: #4682b4; --star-g3: #6495ed; --particle: #4682b4;
+  --disk-a: rgb(255,64,10); --disk-b: rgb(255,158,64); --disk-c: rgb(255,237,209);
+}
+
+[data-theme="starlight"] {
+  color-scheme: light;
+  --bg: #e3dac7; --stage: #ece4d2; --panel: #e8dfcb; --ink: #1a1f2b; --ink2: #3a4152; --dim: #565b67;
+  --faint: #c1b398; --grid: #dad0bb; --line: #cdc1a8; --accent: #2b3c8c;
+  --ui: "Source Serif 4", "Iowan Old Style", "Palatino Linotype", Palatino, Georgia, serif;
+  --serif: "Source Serif 4", "Iowan Old Style", "Palatino Linotype", Palatino, "Book Antiqua", Georgia, "Times New Roman", serif;
+  --size: 19px; --lh: 1.62; --r-btn: 9px; --r-box: 4px;
+  --page-bg: radial-gradient(1200px 800px at 50% -10%, rgba(250,240,215,.35), transparent 70%), var(--bg);
+  --scrim: 5,7,12;
+  /* stars on paper: gilt dots with a soft warm halo instead of white light */
+  --star-core: #7a5a1e; --star-g1: #c9a45a; --star-g2: #d9b86a; --star-g3: #b08a3e; --particle: #2b3c8c;
+  --disk-a: rgb(140,102,56); --disk-b: rgb(237,204,140); --disk-c: rgb(255,245,222);
+}
+
+[data-theme="steel"] {
+  color-scheme: dark;
+  --bg: #1b1d20; --stage: #121416; --panel: #212428; --ink: #e8eaec; --ink2: #b4b9bf; --dim: #8c939b;
+  --faint: #454a50; --grid: #262a2e; --line: #33373c; --accent: #a8bfd2;
+  --ui: "Zilla Slab", Rockwell, serif; --serif: "Zilla Slab", Rockwell, serif;
+  --mono: "IBM Plex Mono", ui-monospace, monospace;
+  --size: 18.5px; --lh: 1.6; --r-btn: 2px; --r-box: 2px;
+  --page-bg: var(--bg);
+  --scrim: 18,20,22;
+  --star-core: #ffffff; --star-g1: #b4b9bf; --star-g2: #a8bfd2; --star-g3: #85bae8; --particle: #a8bfd2;
+  --disk-a: rgb(64,77,92); --disk-b: rgb(133,153,173); --disk-c: rgb(214,227,242);
+}
+
+[data-theme="deathstar"] {
+  color-scheme: dark;
+  --bg: #0a0b0c; --stage: #000000; --panel: #111315; --ink: #f2f2f2; --ink2: #babdc1; --dim: #878b91;
+  --faint: #3a3e43; --grid: #1a1d20; --line: #2c3034; --accent: #e8483d;
+  --ui: "Libre Franklin", system-ui, sans-serif; --serif: "Libre Franklin", system-ui, sans-serif;
+  --mono: "IBM Plex Mono", ui-monospace, monospace;
+  --caps: "Barlow Condensed", "Libre Franklin", system-ui, sans-serif;
+  --size: 17.5px; --lh: 1.68; --r-btn: 0; --r-box: 0;
+  --page-bg: var(--bg);
+  --scrim: 0,0,0;
+  --star-core: #ffffff; --star-g1: #babdc1; --star-g2: #e8483d; --star-g3: #878b91; --particle: #e8483d;
+  --disk-a: rgb(77,79,84); --disk-b: rgb(158,163,171); --disk-c: rgb(235,237,242);
+}
+
+/* ---------------- per-theme touches ---------------- */
+
+/* Singularity */
+[data-theme="singularity"] .hero h1 { font-weight: 750; letter-spacing: -0.04em; text-shadow: 0 2px 30px rgba(0,0,0,.6); }
+[data-theme="singularity"] .col h2 { font-weight: 750; letter-spacing: -0.025em; }
+
+/* Starlight: headings in the text face, ruled section heads like printed pages */
+[data-theme="starlight"] h1, [data-theme="starlight"] h2, [data-theme="starlight"] h3, [data-theme="starlight"] h4 { font-family: var(--serif); }
+[data-theme="starlight"] .hero h1 { font-weight: 600; letter-spacing: -0.015em; }
+[data-theme="starlight"] .col > section > h2 { border-top: 1px solid var(--ink); padding-top: 14px; font-weight: 600; letter-spacing: -0.01em; }
+[data-theme="starlight"] .notelist time { font-variant: small-caps; color: var(--accent); }
+[data-theme="starlight"] figure img, [data-theme="starlight"] figure video, [data-theme="starlight"] figure .ph { box-shadow: 0 1px 2px rgba(60,48,28,.10), 0 10px 30px rgba(60,48,28,.08); }
+
+/* Cold Steel: stenciled title, monospaced dates */
+[data-theme="steel"] .hero h1 { font-family: "Big Shoulders Stencil Display", var(--ui); font-weight: 800; text-transform: uppercase; letter-spacing: .04em; }
+[data-theme="steel"] .col > section > h2 { border-top: 1px solid var(--line); padding-top: 14px; font-weight: 700; letter-spacing: 0; }
+[data-theme="steel"] .notelist time, [data-theme="steel"] .note-date { font: 500 .78em var(--mono); color: var(--accent); }
+[data-theme="steel"] .theme-btn { text-transform: uppercase; letter-spacing: .05em; }
+
+/* Death Star: condensed capitals, a red rule over the title and under section heads */
+[data-theme="deathstar"] h1, [data-theme="deathstar"] h2, [data-theme="deathstar"] h3 { font-family: var(--caps); text-transform: uppercase; letter-spacing: .05em; font-weight: 700; }
+[data-theme="deathstar"] .hero h1 { letter-spacing: .09em; }
+[data-theme="deathstar"] .hero h1::before { content: ""; display: block; width: 72px; height: 3px; background: var(--accent); margin-bottom: 18px; }
+[data-theme="deathstar"] .col > section > h2 { padding-bottom: 10px;
+  background: linear-gradient(var(--accent), var(--accent)) left bottom / 88px 2px no-repeat, linear-gradient(var(--line), var(--line)) left bottom / 100% 1px no-repeat; }
+[data-theme="deathstar"] .theme-btn, [data-theme="deathstar"] .topbar .home { font-family: var(--caps); text-transform: uppercase; letter-spacing: .08em; }
+[data-theme="deathstar"] .notelist time, [data-theme="deathstar"] .note-date { font: 500 .78em var(--mono); }
+[data-theme="deathstar"] .topbar { box-shadow: 0 1px 0 rgba(224,54,44,.25); }
+[data-theme="deathstar"] p, [data-theme="deathstar"] li { letter-spacing: 0.005em; }
+
+/* ---------------- print: every theme prints as black ink on white paper ---------------- */
+@media print {
+  :root, [data-theme] { color-scheme: light; --bg: #fff; --page-bg: #fff; --stage: #f4f4f4; --panel: #f6f6f6; --ink: #000; --ink2: #222;
+    --dim: #555; --faint: #bbb; --line: #ccc; --accent: #000; }
+}
