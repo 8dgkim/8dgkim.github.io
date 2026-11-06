@@ -14,7 +14,7 @@
 <link rel="apple-touch-icon" href="assets/icons/apple-touch-icon.png?v=2">
 <script>try { var d = document.documentElement, t = localStorage.getItem('theme'), l = localStorage.getItem('lang');
   if (t) d.dataset.theme = t;
-  if (!l) l = /^ko\b/i.test(navigator.language || '') ? 'ko' : 'en';
+  if (l !== 'ko') l = 'en';
   d.dataset.lang = d.lang = l; } catch (e) {}</script>
 <link rel="stylesheet" href="css/fonts.css">
 <link rel="stylesheet" href="css/base.css">
@@ -69,10 +69,11 @@
     </ul>
   </section>
 
-  <section data-list="notes" aria-labelledby="notes-h" hidden>
+  <section data-list="notes" aria-labelledby="notes-h">
     <h2 id="notes-h"><span class="i18n" lang="en">Notes</span><span class="i18n" lang="ko">글</span></h2>
     <ul class="notelist">
       <!-- build:notes (made by tools/build.py) -->
+      <li><time datetime="2026-11-06">2026-11-06</time><a href="posts/2026-11-06/">A Lean proof of the Thomson problem for N = 32</a></li>
       <!-- /build:notes -->
     </ul>
   </section>
@@ -87,7 +88,7 @@
     </ul>
   </section>
 
-  <footer class="foot"><span class="i18n" lang="en">Kim DongGyu · last updated 2026-11-05</span><span class="i18n" lang="ko">김동규 · 최종 수정 2026-11-05</span></footer>
+  <footer class="foot"><span class="i18n" lang="en">Kim DongGyu · last updated 2026-11-06</span><span class="i18n" lang="ko">김동규 · 최종 수정 2026-11-06</span></footer>
 </main>
 
 </body>

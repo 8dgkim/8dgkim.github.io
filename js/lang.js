@@ -2,7 +2,7 @@
    lang.js : English / Korean on the home page
    Both languages are written in index.html, side by side: elements with class "i18n" and lang="en" or lang="ko";
    css/base.css shows the ones of the current language (html[data-lang]). An inline script in <head> picks the
-   language before the first paint: the saved choice, else Korean for browsers set to Korean, else English.
+   language before the first paint: the saved choice, else English (whatever the browser's language).
    The button shows the other language's letter (가 / A); its name appears on hover.
    ========================================================================== */
 (function () {
